@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { userActions } from "../store";
 
 const Create = () => {
+
+    const dispatch = useDispatch();
+
     const [users, setUsers] = useState({});
 
     const getUserData = () => {
@@ -12,13 +17,22 @@ const Create = () => {
         //     "id": "1"
         //   }, and that is connect by this Create Form input filds with similar way;
         // Whereas the event.target.value will provide the value that is enter in the field;
+
         console.log({ ...users, [event.target.name]: event.target.value })
         // Here, we are getting the data on console screen;
     }
 
+    const handlerOnSubmitForm = (event) => {
+        event.preventDefault();
+        console.log("users", users);
+        // Submitting the form or data i.e, filled by the user on server with the help of dispatch function of reduxToolKit;
+        dispatch(userActions(users));
+
+    }
+
     return (
         <>
-            <form className="w-50 mx-auto my-5">
+            <form className="w-50 mx-auto my-5" onSubmit={handlerOnSubmitForm}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">
                         Name
