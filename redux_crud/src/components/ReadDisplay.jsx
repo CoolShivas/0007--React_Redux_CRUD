@@ -1,5 +1,16 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux"
+import { getActions } from "../store";
 
 const ReadDisplay = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        console.log(getActions());
+        dispatch(getActions());
+    }, []);
+
     return (
         <>
             <h1> Get or Display Data from Server </h1>
