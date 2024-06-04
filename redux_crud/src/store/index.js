@@ -6,9 +6,9 @@ import {
 } from "@reduxjs/toolkit";
 
 // Creation of action for reducer functions;
-export const userActions = createAsyncThunk(
-  "createuser",
-  async (getDataFromDispatch, { isRejectedWithValue }) => {
+export const postActions = createAsyncThunk(
+  "postUserData",
+  async (getDataFromCreateDispatch, { isRejectedWithValue }) => {
     const response = await fetch(
       `https://665e08e5e88051d604093478.mockapi.io/studentData`,
       {
@@ -16,7 +16,7 @@ export const userActions = createAsyncThunk(
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(getDataFromDispatch),
+        body: JSON.stringify(getDataFromCreateDispatch),
       }
     );
 
@@ -38,14 +38,14 @@ export const userSlice = createSlice({
     error: null,
   },
   reducers: {
-    [userActions.pending]: (state, action) => {
+    [postActions.pending]: (state, action) => {
       state.loading = true;
     },
-    [userActions.fulfilled]: (state, action) => {
+    [postActions.fulfilled]: (state, action) => {
       state.loading = false;
       state.userArray.push(action.payload);
     },
-    [userActions.rejected]: (state, action) => {
+    [postActions.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },

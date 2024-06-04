@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { userActions } from "../store";
+import { postActions } from "../store";
 
 const Create = () => {
 
@@ -26,8 +26,7 @@ const Create = () => {
         event.preventDefault();
         console.log("users", users);
         // Submitting the form or data i.e, filled by the user on server with the help of dispatch function of reduxToolKit;
-        dispatch(userActions(users));
-
+        dispatch(postActions(users));
     }
 
     return (
