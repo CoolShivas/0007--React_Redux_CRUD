@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+
 const Navbar = () => {
     return (
         <>
@@ -6,8 +8,8 @@ const Navbar = () => {
                 <div className="container-fluid">
                     <a className="navbar-brand">Navbar</a>
 
-                    <a className="navbar-brand">Home</a>
-                    <a className="navbar-brand">About</a>
+                    <NavLink to="/create" className="navbar-brand"> Create </NavLink>
+                    <NavLink to="/display" className="navbar-brand"> Display </NavLink>
 
                     <form className="d-flex" role="search">
 

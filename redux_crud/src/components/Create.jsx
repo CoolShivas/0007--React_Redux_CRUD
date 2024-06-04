@@ -32,9 +32,10 @@ const Create = () => {
 
     return (
         <>
+            <center><h1 className="my-2"> Fill the data </h1></center>
             <form className="w-50 mx-auto my-5" onSubmit={handlerOnSubmitForm}>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">
+                    <label htmlFor="exampleInputEmail1" className="form-label">
                         Name
                     </label>
                     <input
@@ -48,7 +49,7 @@ const Create = () => {
                 </div>
 
                 <div className="mb-3">
-                    <label for="exampleInputPassword1" className="form-label">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                         Email
                     </label>
                     <input
@@ -61,7 +62,7 @@ const Create = () => {
                 </div>
 
                 <div className="mb-3">
-                    <label for="exampleInputPassword1" className="form-label">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                         Age
                     </label>
                     <input
@@ -82,7 +83,7 @@ const Create = () => {
                         value="Male"
                         onChange={getUserData}
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" htmlFor="exampleCheck1">
                         Male
                     </label>
                 </div>
@@ -95,7 +96,7 @@ const Create = () => {
                         value="Female"
                         onChange={getUserData}
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" htmlFor="exampleCheck1">
                         Female
                     </label>
                 </div>
